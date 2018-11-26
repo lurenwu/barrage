@@ -338,8 +338,6 @@ let canvasBarrage;
 
 let ws = new WebSocket('ws://localhost:9999');
 
-
-
 // 监听与ws服务端的连接
 
 ws.onopen = function () {

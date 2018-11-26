@@ -16,12 +16,10 @@ ws.on('connection', socket => {
 
     clients.push(socket); // 把socket实例添加到数组
 
-
-
     // 通过redis客户端的lrange方法来获取数据库中key为barrages的数据
 
     clientRedis.lrange('barrages', 0, -1, (err, data) => {
-
+        console.log(data)
         // 由于redis存储的是key value类型，因此需要JSON.parse转成对象
 
         data = data.map(item => JSON.parse(item));
